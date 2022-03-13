@@ -15,12 +15,14 @@ public class CodeGenerate {
     int alphabetsCount;
     String[] alphapets;
     String[][] data;
+    String[] accepts;
 
-    public CodeGenerate(int states, int alphabetsCount, String[] alphapets, String[][] data) {
+    public CodeGenerate(int states, int alphabetsCount, String[] alphapets, String[][] data, String[] accepts) {
         this.states = states;
         this.alphabetsCount = alphabetsCount;
         this.alphapets = alphapets;
         this.data = data;
+        this.accepts = accepts;
     }
 
     private String addElse(int j) {
@@ -59,6 +61,11 @@ public class CodeGenerate {
         code = code + "} \n";
         code= code + "if (state =="+states+")\n";
         code = code + "return true;\n";
+        if(accepts.length !=0){
+        for(int i = 0;i<accepts.length;i++){
+        code = code + "else if(state =="+accepts[i]+")\n return true;\n";
+        }
+        }
         code = code + "else \n";
         code = code + "return false;\n";
         code = code + "} \n";
