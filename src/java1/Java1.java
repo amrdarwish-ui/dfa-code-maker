@@ -5,9 +5,7 @@
  */
 package java1;
 
-import javax.swing.JFrame;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
+
 
 /**
  *
@@ -22,7 +20,7 @@ public class Java1 {
     public static void main(String[] args) {
      Table t = new Table();
      t.setVisible(true);
-//new TableExample(3);
+     
     }
     
 }
